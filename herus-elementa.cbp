@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="herus-elementa" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/herus-elementa" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add library="lib\libsfml-graphics-d.a" />
+					<Add library="lib\libsfml-window-d.a" />
+					<Add library="lib\libsfml-system-d.a" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/herus-elementa" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="lib\libsfml-graphics.a" />
+					<Add library="lib\libsfml-window.a" />
+					<Add library="lib\libsfml-system.a" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="src/Ayuda.cpp" />
+		<Unit filename="src/Ayuda.h" />
+		<Unit filename="src/Box.cpp" />
+		<Unit filename="src/Box.h" />
+		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Camera.h" />
+		<Unit filename="src/Clock.cpp" />
+		<Unit filename="src/Clock.h" />
+		<Unit filename="src/CollisionManager.cpp" />
+		<Unit filename="src/CollisionManager.h" />
+		<Unit filename="src/CreditsState.cpp" />
+		<Unit filename="src/CreditsState.h" />
+		<Unit filename="src/Door.cpp" />
+		<Unit filename="src/Door.h" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/Enemy.h" />
+		<Unit filename="src/Entity.cpp" />
+		<Unit filename="src/Entity.h" />
+		<Unit filename="src/GameEngine.cpp" />
+		<Unit filename="src/GameEngine.h" />
+		<Unit filename="src/GameManager.cpp" />
+		<Unit filename="src/GameManager.h" />
+		<Unit filename="src/GameState.h" />
+		<Unit filename="src/HUD.cpp" />
+		<Unit filename="src/HUD.h" />
+		<Unit filename="src/InLevelState.cpp" />
+		<Unit filename="src/InLevelState.h" />
+		<Unit filename="src/Input.cpp" />
+		<Unit filename="src/Input.h" />
+		<Unit filename="src/IntroState.cpp" />
+		<Unit filename="src/IntroState.h" />
+		<Unit filename="src/Key.cpp" />
+		<Unit filename="src/Key.h" />
+		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/Level.h" />
+		<Unit filename="src/LevelManager.cpp" />
+		<Unit filename="src/LevelManager.h" />
+		<Unit filename="src/MenuState.cpp" />
+		<Unit filename="src/MenuState.h" />
+		<Unit filename="src/Palanca.cpp" />
+		<Unit filename="src/Palanca.h" />
+		<Unit filename="src/Plataforma.cpp" />
+		<Unit filename="src/Plataforma.h" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Player.h" />
+		<Unit filename="src/Poder.cpp" />
+		<Unit filename="src/Poder.h" />
+		<Unit filename="src/Rejilla.cpp" />
+		<Unit filename="src/Rejilla.h" />
+		<Unit filename="src/Resources.h" />
+		<Unit filename="src/SFaseState.cpp" />
+		<Unit filename="src/SFaseState.h" />
+		<Unit filename="src/SaveManager.cpp" />
+		<Unit filename="src/SaveManager.h" />
+		<Unit filename="src/Text.cpp" />
+		<Unit filename="src/Text.h" />
+		<Unit filename="src/Tile.cpp" />
+		<Unit filename="src/Tile.h" />
+		<Unit filename="src/Torch.cpp" />
+		<Unit filename="src/Torch.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/tinyxml2.cpp" />
+		<Unit filename="src/tinyxml2.h" />
+		<Extensions>
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,671 @@
+# depslib dependency file v1.0
+1369689058 source:c:\users\ruben\github\herus-elementa\src\ayuda.cpp
+	"Ayuda.h"
+	"Clock.h"
+	"Camera.h"
+	"SFML/Graphics.hpp"
+	"Resources.h"
+	"SFML/System.hpp"
+	"InLevelState.h"
+
+1369671474 c:\users\ruben\github\herus-elementa\src\ayuda.h
+	"Entity.h"
+	<iostream>
+	"Clock.h"
+	"Camera.h"
+
+1369574266 c:\users\ruben\github\herus-elementa\src\entity.h
+	"SFML/Graphics.hpp"
+	"Clock.h"
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/View.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1374390132 c:\users\ruben\github\herus-elementa\include\sfml\config.hpp
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1368099372 c:\users\ruben\github\herus-elementa\include\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<locale>
+	<string>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\thread.inl
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\threadlocalptr.inl
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1372053422 c:\users\ruben\github\herus-elementa\include\sfml\system\utf.inl
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\vector2.inl
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\system\vector3.inl
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\contextsettings.hpp
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1371061192 c:\users\ruben\github\herus-elementa\include\sfml\window\window.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\window\windowstyle.hpp
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\blendmode.hpp
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1368305601 c:\users\ruben\github\herus-elementa\include\sfml\graphics\rect.inl
+
+1367997280 c:\users\ruben\github\herus-elementa\include\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1368172116 c:\users\ruben\github\herus-elementa\include\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1367997280 c:\users\ruben\github\herus-elementa\include\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1367997281 c:\users\ruben\github\herus-elementa\include\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\primitivetype.hpp
+
+1367997280 c:\users\ruben\github\herus-elementa\include\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1371547273 c:\users\ruben\github\herus-elementa\include\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1368255064 c:\users\ruben\github\herus-elementa\include\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1367997280 c:\users\ruben\github\herus-elementa\include\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1367997278 c:\users\ruben\github\herus-elementa\include\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1367997279 c:\users\ruben\github\herus-elementa\include\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1367997280 c:\users\ruben\github\herus-elementa\include\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1411827577 c:\users\ruben\github\herus-elementa\src\clock.h
+	"SFML/System/Clock.hpp"
+
+1369479236 c:\users\ruben\github\herus-elementa\src\camera.h
+	"SFML/Graphics.hpp"
+
+1369687046 c:\users\ruben\github\herus-elementa\src\resources.h
+
+1369655918 c:\users\ruben\github\herus-elementa\src\inlevelstate.h
+	"GameState.h"
+	"Camera.h"
+	"HUD.h"
+
+1369440314 c:\users\ruben\github\herus-elementa\src\gamestate.h
+	"GameManager.h"
+
+1411827620 c:\users\ruben\github\herus-elementa\src\gamemanager.h
+	<vector>
+	"GameEngine.h"
+	"SFML/Graphics/RenderWindow.hpp"
+
+1411827588 c:\users\ruben\github\herus-elementa\src\gameengine.h
+	"Clock.h"
+	"SFML/Graphics/RenderWindow.hpp"
+	"Camera.h"
+
+1411827620 c:\users\ruben\github\herus-elementa\src\hud.h
+	"SFML/Graphics/Text.hpp"
+	"Entity.h"
+	"Camera.h"
+	"Text.h"
+	"Ayuda.h"
+
+1411827620 c:\users\ruben\github\herus-elementa\src\text.h
+	"SFML/Graphics/Font.hpp"
+	"SFML/Graphics/RenderWindow.hpp"
+	"SFML/Graphics/Text.hpp"
+	"GameEngine.h"
+
+1369506274 source:c:\users\ruben\github\herus-elementa\src\box.cpp
+	"Box.h"
+	"Resources.h"
+
+1369505460 c:\users\ruben\github\herus-elementa\src\box.h
+	"Entity.h"
+
+1369479294 source:c:\users\ruben\github\herus-elementa\src\camera.cpp
+	"Camera.h"
+	"GameEngine.h"
+	"Player.h"
+	"LevelManager.h"
+
+1369384892 c:\users\ruben\github\herus-elementa\src\player.h
+	"Entity.h"
+
+1369492308 c:\users\ruben\github\herus-elementa\src\levelmanager.h
+	"Level.h"
+	"tinyxml2.h"
+
+1369604274 c:\users\ruben\github\herus-elementa\src\level.h
+	"SFML/Graphics.hpp"
+	"Tile.h"
+	"Enemy.h"
+	"Key.h"
+	"Door.h"
+	"Palanca.h"
+	"Plataforma.h"
+	"Camera.h"
+	"Poder.h"
+	"Box.h"
+	"Rejilla.h"
+	"Torch.h"
+
+1368474010 c:\users\ruben\github\herus-elementa\src\tile.h
+	"SFML/Graphics.hpp"
+
+1368568796 c:\users\ruben\github\herus-elementa\src\enemy.h
+	"Entity.h"
+	"Clock.h"
+
+1368565968 c:\users\ruben\github\herus-elementa\src\key.h
+	"Entity.h"
+
+1368396204 c:\users\ruben\github\herus-elementa\src\door.h
+	"Entity.h"
+
+1368457640 c:\users\ruben\github\herus-elementa\src\palanca.h
+	"Entity.h"
+
+1368457364 c:\users\ruben\github\herus-elementa\src\plataforma.h
+	"Entity.h"
+
+1368567102 c:\users\ruben\github\herus-elementa\src\poder.h
+	"Entity.h"
+
+1369557748 c:\users\ruben\github\herus-elementa\src\rejilla.h
+	"Entity.h"
+
+1369575310 c:\users\ruben\github\herus-elementa\src\torch.h
+	"Entity.h"
+	"Clock.h"
+	"Resources.h"
+
+1363172316 c:\users\ruben\github\herus-elementa\src\tinyxml2.h
+	<ctype.h>
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdarg.h>
+	<cctype>
+	<climits>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cstdarg>
+	<android/log.h>
+	<assert.h>
+
+1369383310 source:c:\users\ruben\github\herus-elementa\src\clock.cpp
+	"Clock.h"
+
+1369679528 source:c:\users\ruben\github\herus-elementa\src\collisionmanager.cpp
+	<iostream>
+	"CollisionManager.h"
+	"Player.h"
+	"LevelManager.h"
+	"Input.h"
+	"HUD.h"
+
+1369510870 c:\users\ruben\github\herus-elementa\src\collisionmanager.h
+	"SFML/Graphics.hpp"
+	<string>
+
+1368403430 c:\users\ruben\github\herus-elementa\src\input.h
+
+1369686072 source:c:\users\ruben\github\herus-elementa\src\creditsstate.cpp
+	"CreditsState.h"
+	"GameManager.h"
+	"MenuState.h"
+
+1369685988 c:\users\ruben\github\herus-elementa\src\creditsstate.h
+	"GameState.h"
+	"Entity.h"
+
+1411827620 c:\users\ruben\github\herus-elementa\src\menustate.h
+	"GameState.h"
+	"Entity.h"
+	"SFML/Graphics/Texture.hpp"
+	"SFML/Graphics/Sprite.hpp"
+	"Clock.h"
+
+1368396356 source:c:\users\ruben\github\herus-elementa\src\door.cpp
+	"Door.h"
+	"Resources.h"
+
+1368568914 source:c:\users\ruben\github\herus-elementa\src\enemy.cpp
+	<iostream>
+	"Enemy.h"
+	"Resources.h"
+
+1369574360 source:c:\users\ruben\github\herus-elementa\src\entity.cpp
+	<iostream>
+	"Entity.h"
+	"GameEngine.h"
+
+1369655838 source:c:\users\ruben\github\herus-elementa\src\gameengine.cpp
+	"GameEngine.h"
+
+1369682358 source:c:\users\ruben\github\herus-elementa\src\gamemanager.cpp
+	"GameManager.h"
+	"GameState.h"
+	<stdio.h>
+	<iostream>
+	"SFML/Window.hpp"
+	"SFML/Graphics.hpp"
+	"GameEngine.h"
+
+1369655846 source:c:\users\ruben\github\herus-elementa\src\hud.cpp
+	<sstream>
+	"HUD.h"
+	"Player.h"
+	"Resources.h"
+	"GameEngine.h"
+
+1369686188 source:c:\users\ruben\github\herus-elementa\src\inlevelstate.cpp
+	"InLevelState.h"
+	"MenuState.h"
+	"SFaseState.h"
+	"SFML/Window/Event.hpp"
+	"SFML/Window/Keyboard.hpp"
+	"GameEngine.h"
+	"LevelManager.h"
+	"Player.h"
+	"CollisionManager.h"
+	"Input.h"
+	"SaveManager.h"
+	"Resources.h"
+	"CreditsState.h"
+
+1369670360 c:\users\ruben\github\herus-elementa\src\sfasestate.h
+	"GameState.h"
+	"Entity.h"
+	"SFML/Graphics.hpp"
+	"Clock.h"
+
+1369586840 c:\users\ruben\github\herus-elementa\src\savemanager.h
+
+1368385258 source:c:\users\ruben\github\herus-elementa\src\input.cpp
+	"Input.h"
+	"SFML/Window/Keyboard.hpp"
+
+1369687220 source:c:\users\ruben\github\herus-elementa\src\introstate.cpp
+	"IntroState.h"
+	"GameManager.h"
+	"MenuState.h"
+	"Resources.h"
+
+1369686850 c:\users\ruben\github\herus-elementa\src\introstate.h
+	"GameState.h"
+	"Entity.h"
+	"Text.h"
+
+1368566562 source:c:\users\ruben\github\herus-elementa\src\key.cpp
+	"Key.h"
+	"Resources.h"
+
+1369569708 source:c:\users\ruben\github\herus-elementa\src\level.cpp
+	<vector>
+	"Level.h"
+
+1369604302 source:c:\users\ruben\github\herus-elementa\src\levelmanager.cpp
+	<iostream>
+	"LevelManager.h"
+	"Resources.h"
+	"GameEngine.h"
+
+1369686698 source:c:\users\ruben\github\herus-elementa\src\main.cpp
+	<iostream>
+	"GameEngine.h"
+	"GameManager.h"
+	"InLevelState.h"
+	"IntroState.h"
+
+1369682442 source:c:\users\ruben\github\herus-elementa\src\menustate.cpp
+	"GameManager.h"
+	"GameState.h"
+	"MenuState.h"
+	"InLevelState.h"
+	"SFaseState.h"
+	"Entity.h"
+	"SaveManager.h"
+	"SFML/Graphics/Sprite.hpp"
+	"SFML/Window/Event.hpp"
+	"SFML/Window/Keyboard.hpp"
+	"LevelManager.h"
+	<iostream>
+
+1368457668 source:c:\users\ruben\github\herus-elementa\src\palanca.cpp
+	"Palanca.h"
+	"Resources.h"
+
+1368462840 source:c:\users\ruben\github\herus-elementa\src\plataforma.cpp
+	"Plataforma.h"
+	"Resources.h"
+
+1369676998 source:c:\users\ruben\github\herus-elementa\src\player.cpp
+	<iostream>
+	"Resources.h"
+	"Player.h"
+	"Input.h"
+	"GameEngine.h"
+
+1369574442 source:c:\users\ruben\github\herus-elementa\src\poder.cpp
+	"Poder.h"
+	"Resources.h"
+
+1369558440 source:c:\users\ruben\github\herus-elementa\src\rejilla.cpp
+	"Rejilla.h"
+	"Resources.h"
+
+1369602634 source:c:\users\ruben\github\herus-elementa\src\savemanager.cpp
+	<iostream>
+	<fstream>
+	"SaveManager.h"
+
+1369682394 source:c:\users\ruben\github\herus-elementa\src\sfasestate.cpp
+	"GameManager.h"
+	"GameState.h"
+	"SFaseState.h"
+	"InLevelState.h"
+	"MenuState.h"
+	"Entity.h"
+	"SaveManager.h"
+	"SFML/Graphics/Sprite.hpp"
+	"SFML/Window/Event.hpp"
+	"SFML/Window/Keyboard.hpp"
+	"LevelManager.h"
+	<iostream>
+
+1369650892 source:c:\users\ruben\github\herus-elementa\src\text.cpp
+	"Text.h"
+	"SFML/Graphics/Text.hpp"
+
+1368474024 source:c:\users\ruben\github\herus-elementa\src\tile.cpp
+	"Tile.h"
+
+1363172316 source:c:\users\ruben\github\herus-elementa\src\tinyxml2.cpp
+	"tinyxml2.h"
+	<new>
+	<stddef.h>
+	<cstddef>
+
+1369575536 source:c:\users\ruben\github\herus-elementa\src\torch.cpp
+	<iostream>
+	"Torch.h"
+
