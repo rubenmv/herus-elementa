@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   MenuState.cpp
  * Author: DKLawis
- * 
+ *
  * Created on 14 de mayo de 2013, 11:46
  */
 #include "GameManager.h"
@@ -31,31 +31,31 @@ void MenuState::Init(){ // Inicializa el estado
     posicion=1;
     ////////FONDO//////////
     m_bg=new Entity("resources/graphics/pantallas/Pantalla_intro.jpg");
-    
+
     ////////BOTONES///////
     boton1=new Entity("resources/graphics/pantallas/Botones.png");
     boton1->setSize(310,122);
     boton1->setFrame(0,0,1,1);
     boton1->setCentro(boton1->getSize().x/2,boton1->getSize().y/2);
     boton1->setPosition(m_bg->getSize().x/2-150,m_bg->getSize().y-400);
-    
+
     boton2=new Entity("resources/graphics/pantallas/Botones.png");
     boton2->setSize(310,122);
     boton2->setFrame(1,1,1,1);
     boton2->setCentro(boton2->getSize().x/2,boton2->getSize().y/2);
     boton2->setPosition(m_bg->getSize().x/2-150,m_bg->getSize().y-250);
-    
+
     boton3=new Entity("resources/graphics/pantallas/Botones.png");
     boton3->setSize(310,122);
     boton3->setFrame(2,1,1,1);
     boton3->setCentro(boton3->getSize().x/2,boton3->getSize().y/2);
     boton3->setPosition(m_bg->getSize().x/2-150,m_bg->getSize().y-100);
-    
+
     ////////CAMARA/////////
-    
+
     ////////RELOJES////////
     clock= new game::Clock();
-    
+
 
 }
 
@@ -78,7 +78,7 @@ void MenuState::Resume(){ // Continua el estado
 
 void MenuState::HandleEvents(GameManager* gameman){ // Controla los eventos de Input
     GameEngine &engine = * GameEngine::Instance();
-	
+
     //Bucle de obtención de eventos
     sf::Event event;
     if(engine.window.pollEvent(event)){
@@ -114,7 +114,7 @@ void MenuState::HandleEvents(GameManager* gameman){ // Controla los eventos de I
                         salir = true;
                         break;
                 }
-				
+
                 // PODERES
                 game::LevelManager &levelManager = * game::LevelManager::Instance();
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
@@ -132,7 +132,7 @@ void MenuState::HandleEvents(GameManager* gameman){ // Controla los eventos de I
                 else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
                         levelManager.nivelActual = 4;
                 }
-                break;         
+                break;
         }
     }
 }
@@ -145,12 +145,12 @@ void MenuState::Update(GameManager* gameman) { // Actualiza el estado del juego
             // Antes de cambiar al mapa indicamos el nivel a cargar al level manager
             game::LevelManager &levelManager = * game::LevelManager::Instance();
             if(posicion==1){
-                
+
                 levelManager.nivelActual = 0;
-				
+
 				SaveManager &saveMan = * SaveManager::Instance();
 				saveMan.save(0);
-				
+
                 gameman->ChangeState(InLevelState::Instance());
             }
             if(posicion==2){
@@ -161,13 +161,13 @@ void MenuState::Update(GameManager* gameman) { // Actualiza el estado del juego
             }
         }
         else if (clock->getMiliseconds()<=100) {
-            
+
             if(posicion==1) boton1->sprite.scale(0.99,0.99);
             if(posicion==2) boton2->sprite.scale(0.99,0.99);
             if(posicion==3) boton3->sprite.scale(0.99,0.99);
         }
         else if (clock->getMiliseconds()>100 && clock->getMiliseconds()<200){
-            
+
             if(posicion==1) boton1->sprite.scale(1.01,1.01);
             if(posicion==2) boton2->sprite.scale(1.01,1.01);
             if(posicion==3) boton3->sprite.scale(1.01,1.01);
@@ -210,7 +210,7 @@ void MenuState::Update(GameManager* gameman) { // Actualiza el estado del juego
             break;
     }
     if(cambio && clock->getMiliseconds()>200){
-        cambio==false;
+        cambio=false;
         clock->restart();
     }
     if(salir){
@@ -221,7 +221,7 @@ void MenuState::Update(GameManager* gameman) { // Actualiza el estado del juego
 
 void MenuState::Draw(GameManager* game) { // Realiza los draws correspondientes en game->screen
     ///////DRAW/////////
-    m_bg->draw();  
+    m_bg->draw();
     boton1->draw();
     boton2->draw();
     boton3->draw();

@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   Entity.cpp
  * Author: Ruben Martinez Vilar
- * 
+ *
  * Created on 12 March 2013, 00:01
  */
 #include <iostream>
@@ -19,7 +19,7 @@ Entity::Entity() {
 Entity::Entity(const char *texture_path) {
 	// Carga el sprite con la textura
 	setSprite(texture_path);
-	
+
 	// Iniciamos el reloj
 	clock.restart();
 	frame = 0;
@@ -40,7 +40,7 @@ void Entity::setSprite(const char *texture_path) {
 	}
 	else {
 		isLoaded = true;
-		
+
 		// Dimensiones de los sprites dentro de la textura
 		sprite.setTexture(textura);
 		// Size de la textura
@@ -67,6 +67,8 @@ sf::Vector2f Entity::getPosition() {
 	if(isLoaded) {
 		return sprite.getPosition();
 	}
+
+	return sf::Vector2f();
 }
 
 // Devuelve el size del sprite/frame
@@ -117,5 +119,5 @@ sf::IntRect Entity::getBounds() {
 }
 
 void Entity::fade(int seg) {
-	
+
 }

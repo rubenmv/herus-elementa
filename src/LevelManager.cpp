@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   LevelFactory.cpp
  * Author: Ruben Martinez Vilar
- * 
+ *
  * Created on 12 May 2013, 13:29
  */
 #include <iostream>
@@ -12,7 +12,7 @@
 #define kGravity 20
 
 namespace game {
-	
+
 LevelManager* LevelManager::pinstance = 0;
 
 LevelManager* LevelManager::Instance() {
@@ -33,7 +33,7 @@ void LevelManager::loadMap() {
 	// Carga fichero tmx/xml
 	tinyxml2::XMLDocument doc;
 	inlevel = new game::Level();
-	
+
 	// Eleccion del mapa a cargar
 	inlevel->finish = false;
 	if(this->nivelActual == 0) {
@@ -50,7 +50,7 @@ void LevelManager::loadMap() {
 		inlevel->rutamapa = RUTA_MAPA3;
 		inlevel->spawnPoint.x = 150.f;
 		inlevel->spawnPoint.y = 200.f;
-		
+
 	}
 	else if(this->nivelActual == 3) {
 		inlevel->rutamapa = RUTA_MAPA4;
@@ -64,7 +64,7 @@ void LevelManager::loadMap() {
 	}
 
 	doc.LoadFile(inlevel->rutamapa);
-	
+
 	// Propiedades del mapa
 	tinyxml2::XMLElement* mapElement = doc.FirstChildElement("map");
 	// Dimensiones del mapa
@@ -77,16 +77,16 @@ void LevelManager::loadMap() {
 	tinyxml2::XMLElement* tilesetElement = mapElement->FirstChildElement("tileset");
 	tinyxml2::XMLElement* imageElement = tilesetElement->FirstChildElement("image");
 	const char *imageSource = imageElement->Attribute("source");
-	
+
 	inlevel->tileset.loadFromFile(imageSource);
-        
+
 	// GUARDAR LOS GIDS DE LOS TILES
 	// Recorremos las capas
 	tinyxml2::XMLElement* layerElement = mapElement->FirstChildElement("layer");
 	std::vector< Tile* > tempTiles;
-	
+
 	Tile *tile;
-	
+
 	// Guarda en una matriz de columnas (capas) de Tiles los tiles
 	while(layerElement) {
 		// Primer tile dentro de la capa
@@ -103,7 +103,7 @@ void LevelManager::loadMap() {
 				// Creamos su rectangulo teniendo en cuenta su posicion (en px) dentro el nivel
 				if(gid != 0) {
 					sf::IntRect r(x*inlevel->tileSize.x, y*inlevel->tileSize.y, inlevel->tileSize.x, inlevel->tileSize.y);
-					
+
 					// Tile de muerte
 					if(gid == 78) {
 						inlevel->deathMap.push_back(r);
@@ -139,41 +139,41 @@ void LevelManager::loadMap() {
 				tile->setFrame(col, fil);
 
 				tempTiles.push_back(tile);
-				
+
 				// Nos movemos al siguiente tile
 				tileElement = tileElement->NextSiblingElement("tile");
 			}
-			
+
 			// Copiamos los tiles a la matriz mapa
 			inlevel->tiles.push_back(tempTiles);
 			tempTiles.clear();
 
 		}
-		
+
 		// Nos movemos a la siguiente capa
 		layerElement = layerElement->NextSiblingElement("layer");
 	}
-        
-        
+
+
 }
 
 // Carga objetos y enemigos sobre el mapa
 void LevelManager::loadObjects() {
 	// Carga fichero tmx/xml
 	tinyxml2::XMLDocument doc;
-       
+
 	doc.LoadFile(inlevel->rutamapa);
-        
+
 	// Inicializamos el poder
 	inlevel->poder = new Poder(-1);
 
 	// Nos movemos directamente al primer objetos
 	tinyxml2::XMLElement* objectElement = doc.FirstChildElement("map")->FirstChildElement("objectgroup")->FirstChildElement("object");
-         
+
 	while(objectElement) {
-            
+
 		const char *t = objectElement->Attribute("type");
-		
+
 		if(std::strcmp(t, "gobo") == 0) {
 			Enemy *enemigo = new Enemy(1);
 			enemigo->setPosition(atof(objectElement->Attribute("x")), atof(objectElement->Attribute("y")) - enemigo->getSize().y);
@@ -243,7 +243,7 @@ void LevelManager::loadObjects() {
 			}
 			inlevel->poder->setPosition(atof(objectElement->Attribute("x")) + inlevel->poder->getSize().x/2, atof(objectElement->Attribute("y")) - inlevel->poder->getSize().y);
 		}
-                
+
 		objectElement = objectElement->NextSiblingElement("object");
 	}
 }
@@ -252,7 +252,7 @@ void LevelManager::loadObjects() {
 void LevelManager::updateObjects() {
 	game::LevelManager &levelManager = * game::LevelManager::Instance();
 	GameEngine &engine = * GameEngine::Instance();
-	
+
 	// Movimiento de enemigos
 	for ( std::vector<Enemy*>::iterator obj = levelManager.inlevel->enemigos.begin(); obj != levelManager.inlevel->enemigos.end(); obj++ ) {
 		// Primero movemos al enemigo
@@ -268,7 +268,7 @@ void LevelManager::updateObjects() {
 				// Invertimos direccion y guardamos la posicion de inicio nueva
 				(*obj)->setSpeed((*obj)->getSpeed().x*-1, (*obj)->getSpeed().y);
 				(*obj)->distance = (*obj)->getPosition().x;
-			}			
+			}
 		}
 		// Animacion enemigos
 		(*obj)->animate();
@@ -286,7 +286,7 @@ void LevelManager::updateObjects() {
 			}
 		}
 	}
-	
+
 	// Movimento de cajas
 	for ( std::vector<Box*>::iterator obj = levelManager.inlevel->cajas.begin(); obj != levelManager.inlevel->cajas.end(); obj++ ) {
 		(*obj)->move(((*obj)->getSpeed().x) * (engine.clock.elapsedSeconds), 0);
@@ -294,7 +294,7 @@ void LevelManager::updateObjects() {
 		// en el siguiende tick el jugador la seguira empujando o no
 		(*obj)->setSpeed(0, 0);
 	}
-	
+
 	// Actualizamos el estado y animacion de las antorchas segun el tiempo
 	for ( std::vector<Torch*>::iterator obj = levelManager.inlevel->antorchas.begin(); obj != levelManager.inlevel->antorchas.end(); obj++ ) {
 		(*obj)->update();
@@ -308,14 +308,14 @@ void LevelManager::updateObjects() {
 			}
 		}
 	}
-	
+
 }
 
 // Dibuja en pantalla todos los tiles del mapa
 void LevelManager::draw(sf::RenderWindow &window, game::Camera *camara) {
 	int j = 0; // Tile actual dentro de la capa
-        
-	for(int i = 0; i < inlevel->tiles.size()-1; i++) {
+
+	for(size_t i = 0; i < inlevel->tiles.size()-1; i++) {
 		j = 0;
 		// Recorremos la pantalla
 		for(int y = 0; y < inlevel->mapSize.y; y++) {
@@ -323,12 +323,12 @@ void LevelManager::draw(sf::RenderWindow &window, game::Camera *camara) {
 
 				// Si hay tile y estamos dentro de la vision de la camara
 				if(inlevel->tiles[i][j]->getGid() > 0) {
-                                    
+
 					// Obtenemso la posicion x del tile sobre el nivel, en pixeles
 					int posX = x * inlevel->tileSize.x;
 					int cX1 = camara->getCenter().x - (camara->getSize().x/2) - inlevel->tileSize.x;
 					int cX2 = camara->getCenter().x + (camara->getSize().x/2) + inlevel->tileSize.x;
-					
+
 					// Si el tile se encuentra en el campo de vision de la camara
 					if(	(posX >= cX1) && (posX <= cX2 ) ) {
 						// Nos movemos por la pantalla de 32 en 32 pixeles
@@ -344,7 +344,7 @@ void LevelManager::draw(sf::RenderWindow &window, game::Camera *camara) {
 			}
 		}
 	}
-	
+
 	// Llaves
 	for ( std::vector<Key*>::iterator obj = inlevel->llaves.begin(); obj != inlevel->llaves.end(); obj++ ) {
 		(*obj)->draw();
@@ -361,7 +361,7 @@ void LevelManager::draw(sf::RenderWindow &window, game::Camera *camara) {
 	for ( std::vector<Torch*>::iterator obj = inlevel->antorchas.begin(); obj != inlevel->antorchas.end(); obj++ ) {
 		//std::cout << "dibujando antorcha" << std::endl;
 		(*obj)->draw();
-	}	
+	}
 	// Cajas
 	for ( std::vector<Box*>::iterator obj = inlevel->cajas.begin(); obj != inlevel->cajas.end(); obj++ ) {
 		(*obj)->draw();
@@ -378,12 +378,12 @@ void LevelManager::draw(sf::RenderWindow &window, game::Camera *camara) {
 	if(inlevel->poder->active != -1) {
 		inlevel->poder->draw();
 	}
-	
+
 	// Dibujamos los objetos y enemigos
 	for ( std::vector<Enemy*>::iterator obj = inlevel->enemigos.begin(); obj != inlevel->enemigos.end(); obj++ ) {
 		(*obj)->draw();
 	}
-        
+
 }
 
 // Dibuja en pantalla todos los tiles del mapa
@@ -391,7 +391,7 @@ void LevelManager::drawFront(sf::RenderWindow &window, game::Camera *camara) {
 	int j = 0; // Tile actual dentro de la capa
 
 	int i = inlevel->tiles.size()-1; // Ultima capa de tiles, front
-	
+
 	// Recorremos la pantalla
 	for(int y = 0; y < inlevel->mapSize.y; y++) {
 		for(int x = 0; x < inlevel->mapSize.x; x++) {
@@ -468,10 +468,10 @@ void LevelManager::reload() {
 		delete *obj;
     }
     inlevel->rejillas.clear();
-	
+
 	// Sprite del poder
 	delete inlevel->poder;
-	
+
 	loadMap();
 	loadObjects();
 }

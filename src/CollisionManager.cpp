@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   CollisionManager.cpp
  * Author: Ruben Martinez Vilar
- * 
+ *
  * Created on 12 March 2013, 00:01
  */
 #include <iostream>
@@ -21,7 +21,7 @@ CollisionManager* CollisionManager::Instance() {
     }
     return pinstance;
 }
-	
+
 CollisionManager::CollisionManager() {}
 
 CollisionManager::~CollisionManager() {}
@@ -34,18 +34,18 @@ bool CollisionManager::checkCollision(sf::IntRect r1, sf::IntRect r2) {
 		int l2 = r1.left + r1.width - r2.left;
 		int l3 = r2.top - r1.top;
 		int l4 = r1.top + r1.height - r2.top;
-		
+
 		// r1 toca por la izquierda de r2
 		if(l1 > l2) { left = true; right = false; }
 		else { left = false; right = true; } // Por la derecha
-		
+
 		// r1 toca encima de r2
 		if(l3 > l4) { top = true; bottom = false; }
 		else { top = false; bottom = true; } // r1 toca por debajo de r2
-		
+
 		return true;
 	}
-	
+
 	return false;
 }
 
@@ -65,10 +65,10 @@ void CollisionManager::handleCollisions() {
 	game::Input &input = * game::Input::Instance();
 
 	// MAPA CON ZONAS DE MUERTE
-	for(int i = 0; i < levelManager.inlevel->deathMap.size(); i++) { // Vector con los rectangulos de colision
+	for(size_t i = 0; i < levelManager.inlevel->deathMap.size(); i++) { // Vector con los rectangulos de colision
 		// Rectangulo actual a comprobar
 		sf::IntRect recTile = levelManager.inlevel->deathMap[i];
-		
+
 		// El jugador colisiona con ese rectangulo
 		if(this->checkCollision(player.getBounds(), recTile)) {
 			// La primera vez que toca muere
@@ -79,11 +79,11 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-	
+
 	int ejeX, ejeY;
 	bool colides = false;
-	// MAPA SOLIDO	
-	for(int i = 0; i < levelManager.inlevel->colisionMap.size(); i++) { // Vector con los rectangulos de colision
+	// MAPA SOLIDO
+	for(size_t i = 0; i < levelManager.inlevel->colisionMap.size(); i++) { // Vector con los rectangulos de colision
 		// Rectangulo actual a comprobar
 		sf::IntRect recTile = levelManager.inlevel->colisionMap[i];
 
@@ -111,7 +111,7 @@ void CollisionManager::handleCollisions() {
 				else {
 					ejeX = (recTile.left + recTile.width) - (player.getPosition().x - player.getSize().x/2);
 				}
-				
+
 				// Actualizamos solo el eje que ha solapado menos
 				// EJE Y
 				if(abs(ejeY) <= abs(ejeX) && player.getSpeed().y >= 0) {
@@ -122,19 +122,19 @@ void CollisionManager::handleCollisions() {
 						player.setSpeed(player.getSpeed().x, 0);
 						player.onGround = true;
 					}
-					
+
 				}
 				// EJE X
 				else {
 					player.setPosition(player.oldPos.x, player.getPosition().y);
 					player.setSpeed(0, player.getSpeed().y);
 				}
-				
+
 			}
 		}
 	}
 	// PLATAFORMAS
-	for(int i = 0; i < levelManager.inlevel->plataformas.size(); i++) {
+	for(size_t i = 0; i < levelManager.inlevel->plataformas.size(); i++) {
 		// Rectangulo actual a comprobar
 		sf::IntRect recTile = levelManager.inlevel->plataformas[i]->getBounds();
 
@@ -169,12 +169,12 @@ void CollisionManager::handleCollisions() {
 			else {
 				player.setPosition(player.oldPos.x, player.getPosition().y);
 				player.setSpeed(0, player.getSpeed().y);
-			}	
+			}
 		}
 	}
-	
+
 	// CAJAS
-	for(int i = 0; i < levelManager.inlevel->cajas.size(); i++) {
+	for(size_t i = 0; i < levelManager.inlevel->cajas.size(); i++) {
 		// Rectangulo actual a comprobar
 		sf::IntRect recCaja = levelManager.inlevel->cajas[i]->getBounds();
 
@@ -211,8 +211,8 @@ void CollisionManager::handleCollisions() {
 				if(player.powers[1] == 1) {
 					bool izquierda = left;
 					levelManager.inlevel->cajas[i]->setSpeed(player.getSpeed().x, 0);
-					
-						for(int j = 0; j < levelManager.inlevel->colisionMap.size(); j++) { // Vector con los rectangulos de colision
+
+						for(size_t j = 0; j < levelManager.inlevel->colisionMap.size(); j++) { // Vector con los rectangulos de colision
 							// Rectangulo actual a comprobar
 							sf::IntRect recTile = levelManager.inlevel->colisionMap[j];
 							if(this->checkCollision(recCaja, recTile)) {
@@ -238,16 +238,16 @@ void CollisionManager::handleCollisions() {
 								}
 							}
 						}
-					
+
 				}
 				else {
 					player.setPosition(player.oldPos.x, player.getPosition().y);
 					player.setSpeed(0, player.getSpeed().y);
 				}
-			}	
+			}
 		}
 	}
-	
+
 	// PUERTAS
 
 	int posx = 0;
@@ -266,7 +266,7 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-	
+
 	// Miramos si hay puertas mas adelante
 	for ( std::vector<Door*>::iterator obj = levelManager.inlevel->puertas.begin(); obj != levelManager.inlevel->puertas.end(); obj++ ) {
 		// Hay puertas delante, no ha terminado
@@ -275,13 +275,13 @@ void CollisionManager::handleCollisions() {
 		}
 	}
 
-	
-	
+
+
 	// REJILLAS
 	for ( std::vector<Rejilla*>::iterator obj = levelManager.inlevel->rejillas.begin(); obj != levelManager.inlevel->rejillas.end(); obj++ ) {
 		// El jugador colisiona con una llave
 		if(checkCollision(player.getBounds(), (*obj)->getBounds())) {
-			
+
 			// El poder de agua esta inactivo
 			if(player.powers[2] != 1) {
 				player.setPosition(player.oldPos.x, player.getPosition().y);
@@ -289,13 +289,13 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-	
-	
+
+
 	// Si ha habido alguna colision el jugador dejar de esta en el aire
 	if(!colides) {
 		player.onGround = false;
 	}
-	
+
 	// ENEMIGOS
 	for ( std::vector<Enemy*>::iterator obj = levelManager.inlevel->enemigos.begin(); obj != levelManager.inlevel->enemigos.end(); obj++ ) {
 		if(player.vivo) {
@@ -327,7 +327,7 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-	
+
 	// LLAVES
 	for ( std::vector<Key*>::iterator obj = levelManager.inlevel->llaves.begin(); obj != levelManager.inlevel->llaves.end(); obj++ ) {
 		// Comprobamos si la llave sigue en pantalla
@@ -355,7 +355,7 @@ void CollisionManager::handleCollisions() {
 			(*obj)->clock.restart();
 		}
 	}
-	
+
 	// PALANCAS
 	for ( std::vector<Palanca*>::iterator obj = levelManager.inlevel->palancas.begin(); obj != levelManager.inlevel->palancas.end(); obj++ ) {
 		// El jugador colisiona con una palanca y la pulsa
@@ -372,7 +372,7 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-	
+
 	// ANTORCHAS
 	for ( std::vector<Torch*>::iterator obj = levelManager.inlevel->antorchas.begin(); obj != levelManager.inlevel->antorchas.end(); obj++ ) {
 		if(checkCollision(player.getBounds(), (*obj)->getBounds()) && player.powers[3] == 1 && input.down) {
@@ -389,7 +389,7 @@ void CollisionManager::handleCollisions() {
 			}
 		}
 	}
-		
+
 	// PODERES
 	if(levelManager.inlevel->poder->getPosition().y < -50) {
 		levelManager.inlevel->poder->active = -1; // Para eliminar
@@ -404,10 +404,10 @@ void CollisionManager::handleCollisions() {
 		levelManager.inlevel->poder->active = 1; // Animacion
 		levelManager.inlevel->poder->setSpeed(0.f, -150.f);
 		levelManager.inlevel->poder->clock.restart();
-		
+
 		// Cambiamos el punto de respawn
 		player.setSpawn(player.getPosition().x, player.getPosition().y);
-		
+
 		// Activamos el mensaje de ayuda
 		HUD &hud = * HUD::Instance();
 
@@ -424,7 +424,7 @@ void CollisionManager::handleCollisions() {
 			case 3: // Fuego
 				hud.ayuda->setActivo(13);
 				break;
-		}	
+		}
 	}
 }
 

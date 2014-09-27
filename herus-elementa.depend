@@ -474,7 +474,7 @@
 1369383310 source:c:\users\ruben\github\herus-elementa\src\clock.cpp
 	"Clock.h"
 
-1369679528 source:c:\users\ruben\github\herus-elementa\src\collisionmanager.cpp
+1411851061 source:c:\users\ruben\github\herus-elementa\src\collisionmanager.cpp
 	<iostream>
 	"CollisionManager.h"
 	"Player.h"
@@ -513,7 +513,7 @@
 	"Enemy.h"
 	"Resources.h"
 
-1369574360 source:c:\users\ruben\github\herus-elementa\src\entity.cpp
+1411851125 source:c:\users\ruben\github\herus-elementa\src\entity.cpp
 	<iostream>
 	"Entity.h"
 	"GameEngine.h"
@@ -560,7 +560,7 @@
 
 1369586840 c:\users\ruben\github\herus-elementa\src\savemanager.h
 
-1368385258 source:c:\users\ruben\github\herus-elementa\src\input.cpp
+1411851180 source:c:\users\ruben\github\herus-elementa\src\input.cpp
 	"Input.h"
 	"SFML/Window/Keyboard.hpp"
 
@@ -583,7 +583,7 @@
 	<vector>
 	"Level.h"
 
-1369604302 source:c:\users\ruben\github\herus-elementa\src\levelmanager.cpp
+1411851214 source:c:\users\ruben\github\herus-elementa\src\levelmanager.cpp
 	<iostream>
 	"LevelManager.h"
 	"Resources.h"
@@ -596,7 +596,7 @@
 	"InLevelState.h"
 	"IntroState.h"
 
-1369682442 source:c:\users\ruben\github\herus-elementa\src\menustate.cpp
+1411851204 source:c:\users\ruben\github\herus-elementa\src\menustate.cpp
 	"GameManager.h"
 	"GameState.h"
 	"MenuState.h"
@@ -638,7 +638,7 @@
 	<fstream>
 	"SaveManager.h"
 
-1369682394 source:c:\users\ruben\github\herus-elementa\src\sfasestate.cpp
+1411852211 source:c:\users\ruben\github\herus-elementa\src\sfasestate.cpp
 	"GameManager.h"
 	"GameState.h"
 	"SFaseState.h"
