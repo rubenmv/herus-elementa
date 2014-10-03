@@ -17,9 +17,9 @@ La documentación del proyecto se puede encontrar en la carpeta "doc" como "GDD.
 
 Capturas
 --------
-![screenshot 1](/doc/screenshots/screenshots-1.png)
-![screenshot 1](/doc/screenshots/screenshots-2.png)
-![screenshot 1](/doc/screenshots/screenshots-3.png)
+![screenshot 1](/doc/screenshots/screenshot-1.jpg)
+![screenshot 1](/doc/screenshots/screenshot-2.png)
+![screenshot 1](/doc/screenshots/screenshot-3.jpg)
 
 Instalación
 -----------
